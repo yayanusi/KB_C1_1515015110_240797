@@ -1,0 +1,15 @@
+domains
+pembeli, makanan = symbol harga,bayar = ulong
+
+predicates
+beli (pembeli,makanan,harga,bayar) - nondeterm (o,o,o,o)
+rest (harga,bayar,harga) - nondeterm (i,i,o)
+
+clauses
+beli (yayu,nasigoreng,100000,200000).
+beli (nusi,soto,400000,800000).
+
+rest(Harga,Bayar,Angsul):- Angsul = Bayar - Harga.
+
+goal
+beli(Pembeli,Makanan,Harga,Bayar),Pembeli = nusi, rest(Harga,Bayar,Angsul).  
